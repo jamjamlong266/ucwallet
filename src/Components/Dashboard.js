@@ -2,6 +2,8 @@ import React from 'react';
 import {StyleSheet, View, Text, Button, FlatList } from 'react-native';
 
 import { createStackNavigator } from 'react-navigation';
+
+
 export default class Dashboard extends React.Component {
     static navigationOptions = {
         headerTitle: <Text>LOGO</Text>,
@@ -16,6 +18,29 @@ export default class Dashboard extends React.Component {
             backgroundColor: '#fff',
         }
     };
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            crypyo : [
+                {key: 'a'},
+                {key: 'b'},
+                {key: 'c'},
+                {key: 'd'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                {key: 'e'},
+                
+            ]
+        }
+    }
       
     render() {
         return(
@@ -28,8 +53,8 @@ export default class Dashboard extends React.Component {
                     onPress={() => this.props.navigation.navigate('Home')}
                 />
                <FlatList
-                    data={[{key: 'a'}, {key: 'b'}]}
-                    renderItem={({item}) => <Text>{item.key}</Text>}
+                    data={this.state.crypyo}
+                    renderItem={({item}) => <Text style={styles.cryptoList}>{item.key}</Text>}
                 />
             </View>
         )
@@ -49,5 +74,14 @@ const styles = StyleSheet.create({
     },
     currency: {
         fontSize: 25
+    },
+    cryptoList: {
+        flex: 1,
+        width: '100%',
+        height: 30,
+        borderBottomWidth: 1,
+        borderBottomColor : '#000',
+        alignItems : 'flex-start',
+        padding: 5,
     },
 })
