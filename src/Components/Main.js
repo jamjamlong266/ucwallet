@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 import Constants from 'expo';
-import { createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 
 const styles = StyleSheet.create({
@@ -45,5 +45,4 @@ export default class Main extends React.Component {
             </View>
         )
     }
-    
 }

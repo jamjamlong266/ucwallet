@@ -1,14 +1,37 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {StyleSheet, View, Text, Button } from 'react-native';
 
-import { createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 export default class Dashboard extends React.Component {
+    static navigationOptions = {
+        headerTitle: <Text>LOGO</Text>,
+        headerRight: (
+          <Button
+            onPress={() => alert('This is a button!')}
+            title="Info"
+            color="#fff"
+          />
+        ),
+    };
+      
     render() {
         return(
-            <View>
+            <View style={styles.Container}>
                 <Text>DASHBOARD</Text>
+                <Button
+                    title="Back to home"
+                    onPress={() => this.props.navigation.navigate('Home')}
+                />
             </View>
         )
     }
 }
+
+const styles = StyleSheet.create({
+    Container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
+})

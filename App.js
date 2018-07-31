@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createSwitchNavigator } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation';
 
 import Main from './src/Components/Main';
 import Dashboard from './src/Components/Dashboard';
@@ -13,7 +13,7 @@ export default class App extends React.Component {
   }
 }
 
-const AppNavigtor = createSwitchNavigator({
+const AppNavigtor = createStackNavigator({
     Home: Main ,
     Dashboard: Dashboard,
 }) 
