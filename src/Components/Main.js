@@ -28,6 +28,11 @@ const styles = StyleSheet.create({
 })
 
 export default class Main extends React.Component {
+
+    static navigationOptions = {
+        header: null,
+    };
+
     render() {
         return (
             <View style={styles.mainContainer}>
