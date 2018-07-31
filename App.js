@@ -1,16 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { createStackNavigator } from 'react-navigation';
+import { createSwitchNavigator } from 'react-navigation';
 
-import Main from './src/Components/Main'
+import Main from './src/Components/Main';
+import Dashboard from './src/Components/Dashboard';
 
 export default class App extends React.Component {
   render() {
     return (
-      <Main style={styles.container}/>
+      <AppNavigtor style={styles.container}/>
     );
   }
 }
+
+const AppNavigtor = createSwitchNavigator({
+    Home: Main ,
+    Dashboard: Dashboard,
+}) 
 
 const styles = StyleSheet.create({
   container: {
